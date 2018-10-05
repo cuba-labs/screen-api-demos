@@ -1,0 +1,9 @@
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd">
+    <data>
+        <instance id="demoCx" class="com.haulmont.cuba.security.entity.User"/>
+    </data>
+
+    <layout>
+        <label id="demoLabel" dataContainer="demoCx" property="login"/>
+    </layout>
+</window>

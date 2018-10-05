@@ -1,0 +1,17 @@
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="Contract">
+    <data>
+        <instance id="contractCt"
+                  class="com.haulmont.screenapidemos.entity.Contract"
+                  view="_local"/>
+    </data>
+
+    <layout expand="editActions"
+            spacing="true">
+        <textField dataContainer="contractCt"
+                   property="title"/>
+
+        <fragment id="editActions"
+                  screen="editorActions"/>
+    </layout>
+</window>

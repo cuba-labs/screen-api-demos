@@ -1,0 +1,6 @@
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="@Subscribe">
+    <layout>
+        <button caption="Demo" id="runBtn"/>
+    </layout>
+</window>

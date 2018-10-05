@@ -1,0 +1,8 @@
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="@Install">
+    <layout>
+        <label value="Label Formatter"/>
+
+        <label id="demoLabel"/>
+    </layout>
+</window>

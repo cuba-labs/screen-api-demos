@@ -1,0 +1,10 @@
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="Action">
+    <actions>
+        <action id="demo" caption="Demo" shortcut="CTRL-N"/>
+    </actions>
+
+    <layout>
+        <button action="demo"/>
+    </layout>
+</window>
