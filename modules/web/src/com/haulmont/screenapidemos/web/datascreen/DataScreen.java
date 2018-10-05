@@ -11,7 +11,7 @@ import javax.inject.Inject;
 @UiController
 public class DataScreen extends Screen {
     @Inject
-    protected InstanceContainer<User> userCx;
+    protected InstanceContainer<User> userCt;
     @Inject
     protected Label<String> demoLabel;
 

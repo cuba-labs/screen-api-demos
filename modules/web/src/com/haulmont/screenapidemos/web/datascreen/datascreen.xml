@@ -1,9 +1,9 @@
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd">
     <data>
-        <instance id="demoCx" class="com.haulmont.cuba.security.entity.User"/>
+        <instance id="demoCt" class="com.haulmont.cuba.security.entity.User"/>
     </data>
 
     <layout>
-        <label id="demoLabel" dataContainer="demoCx" property="login"/>
+        <label id="demoLabel" dataContainer="demoCt" property="login"/>
     </layout>
 </window>
