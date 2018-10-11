@@ -5,5 +5,6 @@
         <item screen="demo-subscribe"/>
         <item screen="demo-install"/>
         <item screen="demo-action"/>
+        <item screen="demo-form"/>
     </menu>
 </menu-config>
