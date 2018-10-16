@@ -15,7 +15,7 @@
   -->
 
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
-        caption="Sandbox">
+        caption="User Form">
 
     <data>
         <instance id="userCt"

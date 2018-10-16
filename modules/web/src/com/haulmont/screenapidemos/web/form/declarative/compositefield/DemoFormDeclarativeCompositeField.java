@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.haulmont.screenapidemos.web.form;
+package com.haulmont.screenapidemos.web.form.declarative.compositefield;
 
 import com.google.common.collect.BiMap;
 import com.google.common.collect.ImmutableBiMap;
-import com.haulmont.cuba.core.global.*;
-import com.haulmont.cuba.gui.UiComponents;
+import com.haulmont.cuba.core.global.Metadata;
+import com.haulmont.cuba.core.global.TimeZones;
 import com.haulmont.cuba.gui.components.Form;
 import com.haulmont.cuba.gui.components.LookupField;
 import com.haulmont.cuba.gui.components.data.options.MapOptions;
@@ -28,17 +28,16 @@ import com.haulmont.cuba.gui.screen.*;
 import com.haulmont.cuba.security.entity.User;
 
 import javax.inject.Inject;
-import java.util.Locale;
 import java.util.Map;
 import java.util.TimeZone;
 import java.util.TreeMap;
 
-@UiController("demo-form")
-@UiDescriptor("demo-form.xml")
+@UiController("demo-form-declarative-composite-field")
+@UiDescriptor("demo-form-declarative-composite-field.xml")
 @EditedEntityContainer("userCt")
-public class DemoForm extends Screen {
+public class DemoFormDeclarativeCompositeField extends Screen {
     @Inject
-    InstanceContainer<User> userCt;
+    private InstanceContainer<User> userCt;
 
     @Inject
     private Form form;
@@ -47,25 +46,13 @@ public class DemoForm extends Screen {
     private LookupField<String> timeZoneField;
 
     @Inject
-    private LookupField<String> languageField;
-
-    @Inject
-    private UiComponents uiComponents;
-
-    @Inject
     private Metadata metadata;
 
     @Inject
     private TimeZones timeZones;
 
-    @Inject
-    private Configuration configuration;
-
-    @Inject
-    private Messages messages;
-
     @Subscribe
-    protected void init(InitEvent event) {
+    protected void initCt(InitEvent event) {
         User user = metadata.create(User.class);
         userCt.setItem(user);
     }
@@ -88,17 +75,5 @@ public class DemoForm extends Screen {
         BiMap<String, String> biMap = ImmutableBiMap.copyOf(options);
         timeZoneField.setOptions(new MapOptions<>(biMap));
         timeZoneField.setOptionCaptionProvider(v -> biMap.inverse().get(v));
-    }
-
-    @Subscribe
-    protected void initLanguage(InitEvent event) {
-        Map<String, Locale> locales = configuration.getConfig(GlobalConfig.class).getAvailableLocales();
-        Map<String, String> options = new TreeMap<>();
-        for (Map.Entry<String, Locale> entry : locales.entrySet()) {
-            options.put(entry.getKey(), messages.getTools().localeToString(entry.getValue()));
-        }
-        BiMap<String, String> biMap = ImmutableBiMap.copyOf(options);
-        languageField.setOptions(new MapOptions<>(biMap));
-        languageField.setOptionCaptionProvider(v -> biMap.inverse().get(v));
     }
 }

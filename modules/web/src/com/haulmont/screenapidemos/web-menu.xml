@@ -5,6 +5,21 @@
         <item screen="demo-subscribe"/>
         <item screen="demo-install"/>
         <item screen="demo-action"/>
-        <item screen="demo-form"/>
+        <menu id="demo-form">
+            <item screen="demo-form-declarative-base"/>
+            <item screen="demo-form-declarative-data-container"/>
+            <item screen="demo-form-declarative-caption-position"/>
+            <item screen="demo-form-declarative-columns"/>
+            <item screen="demo-form-declarative-composite-field"/>
+            <separator/>
+            <item screen="demo-form-programmatic-base"/>
+            <item screen="demo-form-programmatic-data-container"/>
+            <item screen="demo-form-programmatic-caption-position"/>
+            <item screen="demo-form-programmatic-columns"/>
+            <item screen="demo-form-programmatic-composite-field"/>
+            <separator/>
+            <item screen="demo-form-user"/>
+        </menu>
+
     </menu>
 </menu-config>
