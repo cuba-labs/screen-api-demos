@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="fieldGroup"
+        messagesPack="com.haulmont.screenapidemos.web.orderline">
+    <data>
+        <instance id="orderLineCt"
+                    class="com.haulmont.screenapidemos.entity.OrderLine"
+                    view="_local">
+            <loader/>
+        </instance>
+    </data>
+
+    <dialogMode height="600"
+                width="800"/>
+
+    <layout expand="editorActions" spacing="true">
+        <form id="fieldGroup" dataContainer="orderLineCt">
+            <column width="250px">
+                <textField property="product"/>
+                <textField property="price"/>
+                <textField property="quantity"/>
+            </column>
+        </form>
+
+        <frame id="editorActions"
+               screen="editorActions"/>
+    </layout>
+</window>

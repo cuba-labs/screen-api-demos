@@ -21,5 +21,7 @@
             <item screen="demo-form-user"/>
         </menu>
 
+        <item screen="sad_Customer.browse"/>
+        <item screen="sad_Order.browse"/>
     </menu>
 </menu-config>

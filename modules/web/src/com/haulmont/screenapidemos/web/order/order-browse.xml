@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://browseCaption"
+        focusComponent="ordersTable"
+        messagesPack="com.haulmont.screenapidemos.web.order">
+    <data>
+        <collection id="ordersCt"
+                         class="com.haulmont.screenapidemos.entity.Order"
+                         view="order-browse-view">
+            <loader id="ordersLd">
+                <query>
+                    <![CDATA[select e from sad_Order e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="ordersTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="ordersTable"
+                dataLoader="ordersLd">
+            <properties include=".*"/>
+        </filter>
+
+        <groupTable id="ordersTable"
+                    width="100%" dataContainer="ordersCt">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="num"/>
+                <column id="date"/>
+                <column id="customer"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="ordersTable.create"/>
+                <button id="editBtn" action="ordersTable.edit"/>
+                <button id="removeBtn" action="ordersTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

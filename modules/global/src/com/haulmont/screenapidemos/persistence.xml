@@ -3,5 +3,8 @@
     <persistence-unit name="screen-api-demos" transaction-type="RESOURCE_LOCAL">
 
         <class>com.haulmont.screenapidemos.entity.Contract</class>
+        <class>com.haulmont.screenapidemos.entity.Customer</class>
+        <class>com.haulmont.screenapidemos.entity.Order</class>
+        <class>com.haulmont.screenapidemos.entity.OrderLine</class>
     </persistence-unit>
 </persistence>
