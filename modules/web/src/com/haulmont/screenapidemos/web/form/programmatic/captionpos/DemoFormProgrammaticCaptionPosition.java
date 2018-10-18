@@ -38,16 +38,16 @@ public class DemoFormProgrammaticCaptionPosition extends Screen {
         HBoxLayout box = uiComponents.create(HBoxLayout.NAME);
         box.setSpacing(true);
 
-        box.add(createForm("Caption Position: TOP", Form.CaptionAlignment.TOP),
-                createForm("Caption Position: LEFT", Form.CaptionAlignment.LEFT));
+        box.add(createForm("Caption Position: TOP", Form.CaptionPosition.TOP),
+                createForm("Caption Position: LEFT", Form.CaptionPosition.LEFT));
 
         getWindow().add(box);
     }
 
-    private Form createForm(String caption, Form.CaptionAlignment captionPosition) {
+    private Form createForm(String caption, Form.CaptionPosition captionPosition) {
         Form form = uiComponents.create(Form.NAME);
         form.setCaption(caption);
-        form.setCaptionAlignment(captionPosition);
+        form.setCaptionPosition(captionPosition);
 
         TextField<String> textField = uiComponents.create(TextField.TYPE_STRING);
         textField.setCaption("Text Field");
