@@ -1,9 +1,26 @@
-<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd">
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="Screen with Data">
+
     <data>
-        <instance id="demoCt" class="com.haulmont.cuba.security.entity.User"/>
+        <collection id="usersCt" class="com.haulmont.cuba.security.entity.User" view="_local">
+            <loader>
+                <query>select u from sec$User u</query>
+            </loader>
+        </collection>
+
+        <instance id="demoCt" class="com.haulmont.cuba.security.entity.User" view="_local"/>
     </data>
 
-    <layout>
-        <label id="demoLabel" dataContainer="demoCt" property="login"/>
+    <layout expand="usersTable" spacing="true">
+        <table id="usersTable" dataContainer="usersCt" width="100%">
+            <columns>
+                <column id="login"/>
+                <column id="email"/>
+            </columns>
+        </table>
+        <hbox spacing="true">
+            <label id="demoLabel" dataContainer="demoCt" property="login"/>
+            <textField id="emailField" dataContainer="demoCt" property="email"/>
+        </hbox>
     </layout>
 </window>
