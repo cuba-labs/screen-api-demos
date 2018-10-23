@@ -6,7 +6,7 @@ import com.haulmont.screenapidemos.entity.Customer;
 @UiController("sad_Customer.browse")
 @UiDescriptor("customer-browse.xml")
 @LookupComponent("table")
-public class CustomerBrowse extends StandardCombinedScreen<Customer> {
+public class CustomerBrowse extends MasterDetailScreen<Customer> {
 
     @Subscribe
     protected void onBeforeShow(BeforeShowEvent beforeShowEvent) {
