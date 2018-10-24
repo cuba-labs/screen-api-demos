@@ -5,6 +5,7 @@
         <item screen="demo-subscribe"/>
         <item screen="demo-install"/>
         <item screen="demo-action"/>
+        <item screen="demo-data"/>
         <menu id="demo-form">
             <item screen="demo-form-declarative-base"/>
             <item screen="demo-form-declarative-data-container"/>
