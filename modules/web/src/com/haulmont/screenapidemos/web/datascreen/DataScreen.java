@@ -6,10 +6,8 @@ import com.haulmont.cuba.core.global.DataManager;
 import com.haulmont.cuba.core.global.LoadContext;
 import com.haulmont.cuba.gui.components.Button;
 import com.haulmont.cuba.gui.components.Label;
-import com.haulmont.cuba.gui.components.TextInputField;
 import com.haulmont.cuba.gui.model.CollectionLoader;
 import com.haulmont.cuba.gui.model.InstanceContainer;
-import com.haulmont.cuba.gui.model.InstanceLoader;
 import com.haulmont.cuba.gui.screen.*;
 import com.haulmont.cuba.security.entity.User;
 import org.slf4j.Logger;
@@ -60,7 +58,6 @@ public class DataScreen extends Screen {
         log.info("Intercepted users loading");
         return dataManager.loadList(loadContext);
     }
-
 
     @Install(target = Target.DATA_CONTEXT)
     protected Set<Entity> commitChanges(CommitContext commitContext) {

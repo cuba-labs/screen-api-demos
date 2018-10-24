@@ -18,7 +18,9 @@ package com.haulmont.screenapidemos.web.form.programmatic.columns;
 
 import com.haulmont.cuba.gui.UiComponents;
 import com.haulmont.cuba.gui.components.*;
-import com.haulmont.cuba.gui.screen.*;
+import com.haulmont.cuba.gui.screen.Screen;
+import com.haulmont.cuba.gui.screen.Subscribe;
+import com.haulmont.cuba.gui.screen.UiController;
 import com.haulmont.cuba.security.entity.User;
 
 import javax.inject.Inject;
