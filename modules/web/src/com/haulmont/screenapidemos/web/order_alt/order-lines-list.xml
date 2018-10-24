@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="Order lines"
+        focusComponent="orderLinesTable">
+    <data>
+        <instance id="orderCt" class="com.haulmont.screenapidemos.entity.Order">
+            <collection id="orderLinesCt" property="orderLines"/>
+        </instance>
+    </data>
+
+    <dialogMode forceDialog="true" height="600" width="800"/>
+
+    <layout expand="orderLinesTable" spacing="true">
+        <table id="orderLinesTable" dataContainer="orderLinesCt" width="100%">
+            <buttonsPanel>
+                <button action="orderLinesTable.create"/>
+                <button action="orderLinesTable.edit"/>
+                <button action="orderLinesTable.remove"/>
+            </buttonsPanel>
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="product"/>
+                <column id="price"/>
+                <column id="quantity"/>
+            </columns>
+        </table>
+    </layout>
+</window>

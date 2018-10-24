@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="fieldGroup"
+        messagesPack="com.haulmont.screenapidemos.web.terminal">
+    <data>
+        <instance id="terminalCt"
+                    class="com.haulmont.screenapidemos.entity.airport.Terminal"
+                    view="terminal-view">
+            <loader/>
+            
+            <collection id="meetingPointsCt" property="meetingPoints"/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="meetingPointsTable" spacing="true">
+        <form id="fieldGroup" dataContainer="terminalCt">
+            <column width="250px">
+                <textField property="name"/>
+            </column>
+        </form>
+        <table id="meetingPointsTable" dataContainer="meetingPointsCt" width="100%">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <buttonsPanel>
+                <button action="meetingPointsTable.create"/>
+                <button action="meetingPointsTable.edit"/>
+                <button action="meetingPointsTable.remove"/>
+            </buttonsPanel>
+            <columns>
+                <column id="name"/>
+            </columns>
+        </table>
+        <frame id="editorActions"
+               screen='editorActions'/>
+    </layout>
+</window>

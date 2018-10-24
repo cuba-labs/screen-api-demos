@@ -29,6 +29,7 @@
             <actions>
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
+                <action id="altEdit" type="edit" caption="Alternative Edit"/>
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
@@ -41,6 +42,7 @@
                           alwaysVisible="true">
                 <button id="createBtn" action="ordersTable.create"/>
                 <button id="editBtn" action="ordersTable.edit"/>
+                <button id="altEditBtn" action="ordersTable.altEdit"/>
                 <button id="removeBtn" action="ordersTable.remove"/>
             </buttonsPanel>
         </groupTable>

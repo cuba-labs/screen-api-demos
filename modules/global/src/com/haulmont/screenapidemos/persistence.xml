@@ -6,5 +6,9 @@
         <class>com.haulmont.screenapidemos.entity.Customer</class>
         <class>com.haulmont.screenapidemos.entity.Order</class>
         <class>com.haulmont.screenapidemos.entity.OrderLine</class>
+        <class>com.haulmont.screenapidemos.entity.airport.Airport</class>
+        <class>com.haulmont.screenapidemos.entity.airport.Terminal</class>
+        <class>com.haulmont.screenapidemos.entity.airport.MeetingPoint</class>
+        <class>com.haulmont.screenapidemos.entity.airport.Note</class>
     </persistence-unit>
 </persistence>

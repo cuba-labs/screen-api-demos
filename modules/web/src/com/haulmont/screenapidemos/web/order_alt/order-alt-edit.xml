@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="Order alternative editor"
+        focusComponent="fieldGroup">
+    <data>
+        <instance id="orderCt"
+                    class="com.haulmont.screenapidemos.entity.Order"
+                    view="order-edit-view">
+            <loader/>
+
+            <collection id="orderLinesCt" property="orderLines"/>
+        </instance>
+    </data>
+
+    <dialogMode height="600"
+                width="800"/>
+
+    <layout expand="itemsBox" spacing="true">
+        <form id="fieldGroup" dataContainer="orderCt">
+            <column width="250px">
+                <textField property="num"/>
+                <dateField property="date"/>
+                <!--<lookupPickerField property="customer" optionsContainer="customersCt"/>-->
+            </column>
+        </form>
+
+        <groupBox id="itemsBox" caption="Items" stylename="light">
+            <table id="orderLinesTable" dataContainer="orderLinesCt" height="100%" width="100%">
+                <buttonsPanel>
+                    <button id="editLines" caption="Edit lines"/>
+                </buttonsPanel>
+                <columns>
+                    <column id="product"/>
+                    <column id="price"/>
+                    <column id="quantity"/>
+                </columns>
+            </table>
+        </groupBox>
+
+        <fragment id="editorActions"
+               screen="editorActions"/>
+    </layout>
+</window>

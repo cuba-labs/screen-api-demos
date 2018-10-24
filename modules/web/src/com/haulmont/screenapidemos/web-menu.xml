@@ -24,5 +24,6 @@
 
         <item screen="sad_Customer.browse"/>
         <item screen="sad_Order.browse"/>
+        <item screen="sad_Airport.browse"/>
     </menu>
 </menu-config>

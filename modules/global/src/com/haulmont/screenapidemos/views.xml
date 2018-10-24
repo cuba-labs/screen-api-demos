@@ -8,4 +8,13 @@
     <view class="com.haulmont.screenapidemos.entity.Order" name="order-browse-view" extends="_local">
         <property name="customer" view="_minimal"/>
     </view>
+    <view class="com.haulmont.screenapidemos.entity.airport.Terminal" name="terminal-view" extends="_local">
+        <property name="meetingPoints" view="meetingPoint-view"/>
+    </view>
+    <view class="com.haulmont.screenapidemos.entity.airport.MeetingPoint" name="meetingPoint-view" extends="_local">
+        <property name="notes" view="_minimal"/>
+    </view>
+    <view class="com.haulmont.screenapidemos.entity.airport.Airport" name="airport-view" extends="_local">
+        <property name="terminals" view="terminal-view"/>
+    </view>
 </views>

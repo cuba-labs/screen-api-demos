@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="fieldGroup"
+        messagesPack="com.haulmont.screenapidemos.web.note">
+    <data>
+        <instance id="noteCt"
+                    class="com.haulmont.screenapidemos.entity.airport.Note"
+                    view="_local">
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editorActions" spacing="true">
+        <form id="fieldGroup" dataContainer="noteCt">
+            <column width="250px">
+                <textField property="name"/>
+            </column>
+        </form>
+        <frame id="editorActions"
+               screen='editorActions'/>
+    </layout>
+</window>

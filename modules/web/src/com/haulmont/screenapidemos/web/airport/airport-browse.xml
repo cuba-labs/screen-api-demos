@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://browseCaption"
+        focusComponent="airportsTable"
+        messagesPack="com.haulmont.screenapidemos.web.airport">
+    <data>
+        <collection id="airportsCt"
+                         class="com.haulmont.screenapidemos.entity.airport.Airport"
+                         view="_local">
+            <loader id="airportsLd">
+                <query>
+                    <![CDATA[select e from sad_Airport e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="airportsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="airportsTable"
+                dataLoader="airportsLd">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="airportsTable"
+                    width="100%" dataContainer="airportsCt">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="airportsTable.create"/>
+                <button id="editBtn" action="airportsTable.edit"/>
+                <button id="removeBtn" action="airportsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

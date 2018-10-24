@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
 
+    <screen id="sad$Note.edit" template="com/haulmont/screenapidemos/web/note/note-edit.xml"/>
+    <screen id="sad$Meeting.point.edit" template="com/haulmont/screenapidemos/web/meetingpoint/meeting-point-edit.xml"/>
+    <screen id="sad$Terminal.edit" template="com/haulmont/screenapidemos/web/terminal/terminal-edit.xml"/>
+    <screen id="sad$Airport.browse" template="com/haulmont/screenapidemos/web/airport/airport-browse.xml"/>
+    <screen id="sad$Airport.edit" template="com/haulmont/screenapidemos/web/airport/airport-edit.xml"/>
 </screen-config>
