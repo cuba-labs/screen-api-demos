@@ -19,18 +19,18 @@
 
     <layout spacing="true">
         <hbox spacing="true">
-            <form id="form"
+            <form id="formLeft"
                   caption="Caption Position: TOP"
-                  captionAlignment="TOP">
+                  captionPosition="TOP">
                 <textField caption="TextField"/>
                 <lookupField caption="LookupField"/>
                 <pickerField caption="PickerField"/>
                 <checkBox caption="CheckBox"/>
             </form>
 
-            <form id="form"
+            <form id="formRight"
                   caption="Caption Position: LEFT"
-                  captionAlignment="LEFT">
+                  captionPosition="LEFT">
                 <textField caption="TextField"/>
                 <lookupField caption="LookupField"/>
                 <pickerField caption="PickerField"/>
