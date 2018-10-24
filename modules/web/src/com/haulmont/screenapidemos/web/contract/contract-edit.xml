@@ -3,7 +3,9 @@
     <data>
         <instance id="contractCt"
                   class="com.haulmont.screenapidemos.entity.Contract"
-                  view="_local"/>
+                  view="_local">
+            <loader/>
+        </instance>
     </data>
 
     <layout expand="editActions"

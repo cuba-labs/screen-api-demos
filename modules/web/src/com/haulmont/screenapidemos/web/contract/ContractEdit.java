@@ -9,4 +9,8 @@ import com.haulmont.screenapidemos.entity.Contract;
 @UiController("contract-edit")
 public class ContractEdit extends StandardEditor<Contract> {
 
+    @Subscribe
+    protected void onBeforeShow(BeforeShowEvent beforeShowEvent) {
+        getScreenData().loadAll();
+    }
 }
