@@ -3,7 +3,7 @@
         caption="msg://browseCaption"
         focusComponent="airportsTable"
         messagesPack="com.haulmont.screenapidemos.web.airport">
-    <data>
+    <data readOnly="true">
         <collection id="airportsCt"
                          class="com.haulmont.screenapidemos.entity.airport.Airport"
                          view="_local">

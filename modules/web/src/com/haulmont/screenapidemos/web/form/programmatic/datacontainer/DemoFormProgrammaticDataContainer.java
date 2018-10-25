@@ -20,7 +20,7 @@ import com.haulmont.cuba.core.global.Metadata;
 import com.haulmont.cuba.gui.UiComponents;
 import com.haulmont.cuba.gui.components.*;
 import com.haulmont.cuba.gui.components.data.value.ContainerValueSource;
-import com.haulmont.cuba.gui.model.DataContextFactory;
+import com.haulmont.cuba.gui.model.DataElementsFactory;
 import com.haulmont.cuba.gui.model.InstanceContainer;
 import com.haulmont.cuba.gui.screen.Screen;
 import com.haulmont.cuba.gui.screen.Subscribe;
@@ -39,14 +39,14 @@ public class DemoFormProgrammaticDataContainer extends Screen {
     private UiComponents uiComponents;
 
     @Inject
-    private DataContextFactory dataContextFactory;
+    private DataElementsFactory dataElementsFactory;
 
     @Subscribe
     protected void init(InitEvent event) {
         getWindow().setCaption("Form Data Container");
 
         User user = metadata.create(User.class);
-        InstanceContainer<User> userCt = dataContextFactory.createInstanceContainer(User.class);
+        InstanceContainer<User> userCt = dataElementsFactory.createInstanceContainer(User.class);
         userCt.setItem(user);
 
         Form form = uiComponents.create(Form.NAME);

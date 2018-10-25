@@ -24,7 +24,7 @@ import com.haulmont.cuba.gui.UiComponents;
 import com.haulmont.cuba.gui.components.*;
 import com.haulmont.cuba.gui.components.data.options.MapOptions;
 import com.haulmont.cuba.gui.components.data.value.ContainerValueSource;
-import com.haulmont.cuba.gui.model.DataContextFactory;
+import com.haulmont.cuba.gui.model.DataElementsFactory;
 import com.haulmont.cuba.gui.model.InstanceContainer;
 import com.haulmont.cuba.gui.screen.Screen;
 import com.haulmont.cuba.gui.screen.Subscribe;
@@ -46,7 +46,7 @@ public class DemoFormProgrammaticCompositeField extends Screen {
     private TimeZones timeZones;
 
     @Inject
-    private DataContextFactory dataContextFactory;
+    private DataElementsFactory dataElementsFactory;
 
     @Inject
     private UiComponents uiComponents;
@@ -56,7 +56,7 @@ public class DemoFormProgrammaticCompositeField extends Screen {
         getWindow().setCaption("Form Composite Field");
 
         User user = metadata.create(User.class);
-        InstanceContainer<User> userCt = dataContextFactory.createInstanceContainer(User.class);
+        InstanceContainer<User> userCt = dataElementsFactory.createInstanceContainer(User.class);
         userCt.setItem(user);
 
         Form form = uiComponents.create(Form.NAME);

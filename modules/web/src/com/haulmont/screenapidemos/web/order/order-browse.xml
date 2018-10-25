@@ -3,7 +3,7 @@
         caption="msg://browseCaption"
         focusComponent="ordersTable"
         messagesPack="com.haulmont.screenapidemos.web.order">
-    <data>
+    <data readOnly="true">
         <collection id="ordersCt"
                          class="com.haulmont.screenapidemos.entity.Order"
                          view="order-browse-view">
