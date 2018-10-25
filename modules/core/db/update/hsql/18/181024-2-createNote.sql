@@ -1,0 +1,2 @@
+alter table SAD_NOTE add constraint FK_SAD_NOTE_ON_MEETING_POINT foreign key (MEETING_POINT_ID) references SAD_MEETING_POINT(ID);
+create index IDX_SAD_NOTE_ON_MEETING_POINT on SAD_NOTE (MEETING_POINT_ID);
