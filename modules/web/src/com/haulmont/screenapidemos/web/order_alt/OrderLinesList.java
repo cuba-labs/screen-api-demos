@@ -44,21 +44,15 @@ public class OrderLinesList extends Screen {
 
     @Subscribe(id = "orderLinesTable.edit")
     protected void onEditActionPerformed(Action.ActionPerformedEvent event) {
-        editorScreens.builder(OrderLine.class, this)
-                .editEntity(orderLinesTable.getSingleSelected())
-                .withListComponent(orderLinesTable)
-                .withParentDataContext(getScreenData().getDataContext())
-                .create()
-                .show();
+        editorScreens.builder(orderLinesTable).withParentDataContext(getScreenData().getDataContext()).build().show();
     }
 
     @Subscribe(id = "orderLinesTable.create")
     protected void onCreateActionPerformed(Action.ActionPerformedEvent event) {
-        editorScreens.builder(OrderLine.class, this)
+        editorScreens.builder(orderLinesTable)
                 .newEntity()
-                .withListComponent(orderLinesTable)
                 .withParentDataContext(getScreenData().getDataContext())
-                .create()
+                .build()
                 .show();
     }
 

@@ -21,11 +21,6 @@ public class OrderBrowse extends StandardLookup<Order> {
 
     @Subscribe(id = "ordersTable.altEdit")
     protected void onAltEditActionPerformed(Action.ActionPerformedEvent event) {
-        editorScreens.builder(Order.class, this)
-                .withScreen("sad_Order.altEdit")
-                .withListComponent(ordersTable)
-                .editEntity(ordersTable.getSingleSelected())
-                .create()
-                .show();
+        editorScreens.builder(ordersTable).withScreen("sad_Order.altEdit").build().show();
     }
 }
