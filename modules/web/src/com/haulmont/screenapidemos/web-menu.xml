@@ -25,5 +25,7 @@
         <item screen="sad_Customer.browse"/>
         <item screen="sad_Order.browse"/>
         <item screen="sad_Airport.browse"/>
+
+        <item screen="screen-with-mixin"/>
     </menu>
 </menu-config>
