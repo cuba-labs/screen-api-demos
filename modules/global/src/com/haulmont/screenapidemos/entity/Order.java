@@ -13,8 +13,8 @@ import java.util.List;
 @Table(name = "SAD_ORDER")
 @Entity(name = "sad_Order")
 public class Order extends StandardEntity {
-    @Column(name = "NUM")
-    protected String num;
+    @Column(name = "NUMBER_")
+    protected String number;
     @Temporal(TemporalType.DATE)
     @NotNull
     @Column(name = "DATE", nullable = false)
@@ -25,6 +25,7 @@ public class Order extends StandardEntity {
     @Composition
     @OnDelete(DeletePolicy.CASCADE)
     @OneToMany(mappedBy = "order")
+    @OrderBy("num")
     protected List<OrderLine> orderLines;
 
     public List<OrderLine> getOrderLines() {
@@ -51,11 +52,11 @@ public class Order extends StandardEntity {
         this.date = date;
     }
 
-    public String getNum() {
-        return num;
+    public String getNumber() {
+        return number;
     }
 
-    public void setNum(String num) {
-        this.num = num;
+    public void setNumber(String number) {
+        this.number = number;
     }
 }

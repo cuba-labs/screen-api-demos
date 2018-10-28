@@ -25,7 +25,7 @@ create table SAD_ORDER (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
-    NUM varchar(255),
+    NUMBER_ varchar(255),
     DATE date not null,
     CUSTOMER_ID varchar(36),
     --
@@ -43,6 +43,7 @@ create table SAD_ORDER_LINE (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
+    NUM integer not null,
     PRODUCT varchar(255),
     PRICE decimal(19, 2),
     QUANTITY decimal(19, 2),

@@ -33,7 +33,7 @@
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
-                <column id="num"/>
+                <column id="number"/>
                 <column id="date"/>
                 <column id="customer"/>
             </columns>

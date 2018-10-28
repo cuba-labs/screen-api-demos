@@ -5,6 +5,7 @@ import com.haulmont.cuba.gui.components.Action;
 import com.haulmont.cuba.gui.components.GroupTable;
 import com.haulmont.cuba.gui.screen.*;
 import com.haulmont.screenapidemos.entity.Order;
+import com.haulmont.screenapidemos.web.order_alt.OrderAltEdit;
 
 import javax.inject.Inject;
 
@@ -21,6 +22,6 @@ public class OrderBrowse extends StandardLookup<Order> {
 
     @Subscribe(id = "ordersTable.altEdit")
     protected void onAltEditActionPerformed(Action.ActionPerformedEvent event) {
-        editorScreens.builder(ordersTable).withScreen("sad_Order.altEdit").build().show();
+        editorScreens.builder(ordersTable).withScreen(OrderAltEdit.class).build().show();
     }
 }

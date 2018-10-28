@@ -4,15 +4,15 @@
         focusComponent="fieldGroup"
         messagesPack="com.haulmont.screenapidemos.web.order">
     <data>
-        <instance id="orderCt"
+        <instance id="orderDc"
                     class="com.haulmont.screenapidemos.entity.Order"
                     view="order-edit-view">
             <loader/>
 
-            <collection id="orderLinesCt" property="orderLines"/>
+            <collection id="orderLinesDc" property="orderLines"/>
         </instance>
 
-        <collection id="customersCt" class="com.haulmont.screenapidemos.entity.Customer" view="_minimal">
+        <collection id="customersDc" class="com.haulmont.screenapidemos.entity.Customer" view="_minimal">
             <loader>
                 <query>
                     select e from sad_Customer e order by e.name
@@ -25,27 +25,32 @@
                 width="800"/>
 
     <layout expand="itemsBox" spacing="true">
-        <form id="fieldGroup" dataContainer="orderCt">
+        <form id="fieldGroup" dataContainer="orderDc">
             <column width="250px">
-                <textField property="num"/>
+                <textField property="number"/>
                 <dateField property="date"/>
-                <lookupPickerField property="customer" optionsContainer="customersCt"/>
+                <lookupPickerField property="customer" optionsContainer="customersDc"/>
             </column>
         </form>
 
         <groupBox id="itemsBox" caption="Items" stylename="light">
-            <table id="orderLinesTable" dataContainer="orderLinesCt" height="100%" width="100%">
+            <table id="orderLinesTable" dataContainer="orderLinesDc" height="100%" width="100%" sortable="false">
                 <buttonsPanel>
                     <button action="orderLinesTable.create"/>
                     <button action="orderLinesTable.edit"/>
                     <button action="orderLinesTable.remove"/>
+                    <button action="orderLinesTable.moveUp"/>
+                    <button action="orderLinesTable.moveDown"/>
                 </buttonsPanel>
                 <actions>
                     <action id="create" type="create"/>
                     <action id="edit" type="edit"/>
                     <action id="remove" type="remove"/>
+                    <action id="moveUp" caption="Move Up"/>
+                    <action id="moveDown" caption="Move Down"/>
                 </actions>
                 <columns>
+                    <column id="num" width="40"/>
                     <column id="product"/>
                     <column id="price"/>
                     <column id="quantity"/>

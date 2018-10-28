@@ -9,6 +9,9 @@ import java.math.BigDecimal;
 @Table(name = "SAD_ORDER_LINE")
 @Entity(name = "sad_OrderLine")
 public class OrderLine extends StandardEntity {
+    @NotNull
+    @Column(name = "NUM", nullable = false)
+    protected Integer num;
     @Column(name = "PRODUCT")
     protected String product;
     @Column(name = "PRICE")
@@ -19,6 +22,14 @@ public class OrderLine extends StandardEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ORDER_ID")
     protected Order order;
+
+    public Integer getNum() {
+        return num;
+    }
+
+    public void setNum(Integer num) {
+        this.num = num;
+    }
 
     public Order getOrder() {
         return order;
