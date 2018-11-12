@@ -1,5 +1,6 @@
 package com.haulmont.screenapidemos.web.order_alt;
 
+import com.haulmont.cuba.gui.Screens;
 import com.haulmont.cuba.gui.components.Button;
 import com.haulmont.cuba.gui.model.InstanceContainer;
 import com.haulmont.cuba.gui.screen.*;
@@ -14,10 +15,12 @@ public class OrderAltEdit extends StandardEditor<Order> {
 
     @Inject
     private InstanceContainer<Order> orderCt;
+    @Inject
+    protected Screens screens;
 
     @Subscribe(id = "editLines")
     protected void onEditLinesClick(Button.ClickEvent event) {
-        OrderLinesList orderLinesList = getScreenContext().getScreens().create(OrderLinesList.class, OpenMode.DIALOG);
+        OrderLinesList orderLinesList = screens.create(OrderLinesList.class, OpenMode.DIALOG);
         orderLinesList.setParentDataContext(getScreenData().getDataContext());
         orderLinesList.setOrder(orderCt.getItem());
         orderLinesList.show();
@@ -25,5 +28,4 @@ public class OrderAltEdit extends StandardEditor<Order> {
             orderLinesList.commit();
         });
     }
-
 }

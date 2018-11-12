@@ -55,6 +55,4 @@ public class OrderLinesList extends Screen {
                 .build()
                 .show();
     }
-
-
 }
