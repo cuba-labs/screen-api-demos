@@ -18,7 +18,7 @@
     <layout expand="itemsBox" spacing="true">
         <form id="fieldGroup" dataContainer="orderCt">
             <column width="250px">
-                <textField property="num"/>
+                <textField property="number"/>
                 <dateField property="date"/>
                 <!--<lookupPickerField property="customer" optionsContainer="customersCt"/>-->
             </column>
