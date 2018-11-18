@@ -18,7 +18,7 @@ public class DemoSubscribe extends Screen {
     @Subscribe("runBtn")
     protected void run(Button.ClickEvent clickEvent) {
         notifications.create()
-                .setCaption("Demo")
+                .withCaption("Demo")
                 .show();
     }
 }

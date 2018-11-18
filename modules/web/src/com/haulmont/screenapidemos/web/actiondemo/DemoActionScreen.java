@@ -18,7 +18,7 @@ public class DemoActionScreen extends Screen {
     @Subscribe("demo")
     protected void onExport(Action.ActionPerformedEvent event) {
         notifications.create()
-                .setCaption("Demo")
+                .withCaption("Demo")
                 .show();
     }
 }
