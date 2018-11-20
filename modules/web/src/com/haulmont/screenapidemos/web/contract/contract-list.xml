@@ -36,7 +36,13 @@
             </columns>
         </table>
 
-        <fragment id="lookupActions"
-                  screen="lookupActions"/>
+        <hbox id="lookupActions"
+              spacing="true"
+              visible="false"
+              stylename="c-lookup-window-actions">
+
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
     </layout>
 </window>

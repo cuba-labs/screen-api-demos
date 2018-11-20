@@ -131,7 +131,7 @@ create table SAD_NOTE (
     DELETED_BY varchar(50),
     --
     NAME varchar(255) not null,
-    MEETING_POINT_ID varchar(36),
+    MEETING_POINT_ID varchar(36) not null,
     --
     primary key (ID)
 )^

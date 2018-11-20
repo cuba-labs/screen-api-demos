@@ -46,6 +46,15 @@
                         <button action="table.remove"/>
                     </buttonsPanel>
                 </groupTable>
+
+                <hbox id="lookupActions"
+                      spacing="true"
+                      visible="false"
+                      stylename="c-lookup-window-actions">
+
+                    <button action="lookupSelectAction"/>
+                    <button action="lookupCancelAction"/>
+                </hbox>
             </vbox>
             <vbox id="editBox" height="100%" margin="false,false,false,true" spacing="true" expand="actionsPane">
                 <form id="form" dataContainer="customerCt">

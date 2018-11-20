@@ -13,7 +13,12 @@
         <textField dataContainer="contractCt"
                    property="title"/>
 
-        <fragment id="editActions"
-                  screen="editorActions"/>
+        <hbox id="editActions"
+              spacing="true"
+              stylename="c-edit-window-actions">
+
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
     </layout>
 </window>
