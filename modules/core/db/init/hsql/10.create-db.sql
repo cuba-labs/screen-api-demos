@@ -63,6 +63,9 @@ create table SAD_CUSTOMER (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
+    ADDRESS_CITY varchar(255),
+    ADDRESS_ZIP varchar(10),
+    --
     NAME varchar(255) not null,
     EMAIL varchar(100),
     --

@@ -1,20 +1,12 @@
-<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd" caption="msg://browseCaption"
-        focusComponent="table"
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd" caption="msg://browseCaption" focusComponent="table"
         messagesPack="com.haulmont.screenapidemos.web.customer">
     <data>
-        <collection id="customersCt"
-                    class="com.haulmont.screenapidemos.entity.Customer"
-                    view="_local">
+        <collection id="customersCt" class="com.haulmont.screenapidemos.entity.Customer" view="customer-view">
             <loader id="customersLd">
-                <query>
-                    <![CDATA[select e from sad_Customer e]]>
-                </query>
+                <query><![CDATA[select e from sad_Customer e]]></query>
             </loader>
         </collection>
-
-        <instance id="customerCt"
-                  class="com.haulmont.screenapidemos.entity.Customer"
-                  view="_local">
+        <instance id="customerCt" class="com.haulmont.screenapidemos.entity.Customer" view="customer-view">
             <loader/>
         </instance>
     </data>
@@ -33,25 +25,25 @@
                     <actions>
                         <action id="create" type="create"/>
                         <action id="edit" type="edit"/>
+                        <action id="editExt" type="edit" caption="Edit in dialog"/>
                         <action id="remove" type="remove"/>
                     </actions>
                     <columns>
                         <column id="name"/>
                         <column id="email"/>
+                        <column id="address.city"/>
+                        <column id="address.zip"/>
                     </columns>
                     <rowsCount/>
                     <buttonsPanel alwaysVisible="true">
                         <button action="table.create"/>
                         <button action="table.edit"/>
+                        <button action="table.editExt"/>
                         <button action="table.remove"/>
                     </buttonsPanel>
+                    <rows/>
                 </groupTable>
-
-                <hbox id="lookupActions"
-                      spacing="true"
-                      visible="false"
-                      stylename="c-lookup-window-actions">
-
+                <hbox id="lookupActions" spacing="true" visible="false" stylename="c-lookup-window-actions">
                     <button action="lookupSelectAction"/>
                     <button action="lookupCancelAction"/>
                 </hbox>
@@ -61,6 +53,8 @@
                     <column width="250px">
                         <textField property="name"/>
                         <textField property="email"/>
+                        <textField property="address.city"/>
+                        <textField property="address.zip"/>
                     </column>
                 </form>
                 <hbox id="actionsPane" spacing="true" visible="false">

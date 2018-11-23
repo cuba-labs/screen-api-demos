@@ -17,4 +17,10 @@
     <view class="com.haulmont.screenapidemos.entity.airport.Airport" name="airport-view" extends="_local">
         <property name="terminals" view="terminal-view"/>
     </view>
+    <view entity="sad_Customer" name="customer-view" extends="_local">
+        <property name="address" view="_minimal">
+            <property name="city"/>
+            <property name="zip"/>
+        </property>
+    </view>
 </views>

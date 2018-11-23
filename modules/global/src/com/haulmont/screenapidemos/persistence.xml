@@ -10,5 +10,6 @@
         <class>com.haulmont.screenapidemos.entity.airport.Terminal</class>
         <class>com.haulmont.screenapidemos.entity.airport.MeetingPoint</class>
         <class>com.haulmont.screenapidemos.entity.airport.Note</class>
+        <class>com.haulmont.screenapidemos.entity.Address</class>
     </persistence-unit>
 </persistence>
