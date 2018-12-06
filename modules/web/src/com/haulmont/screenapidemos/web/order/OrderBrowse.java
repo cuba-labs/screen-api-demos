@@ -1,6 +1,6 @@
 package com.haulmont.screenapidemos.web.order;
 
-import com.haulmont.cuba.gui.EditorScreens;
+import com.haulmont.cuba.gui.ScreenBuilders;
 import com.haulmont.cuba.gui.components.Action;
 import com.haulmont.cuba.gui.components.GroupTable;
 import com.haulmont.cuba.gui.screen.*;
@@ -15,13 +15,15 @@ import javax.inject.Inject;
 public class OrderBrowse extends StandardLookup<Order> {
 
     @Inject
-    private EditorScreens editorScreens;
-
+    private ScreenBuilders screenBuilders;
     @Inject
     private GroupTable<Order> ordersTable;
 
     @Subscribe(id = "ordersTable.altEdit")
     protected void onAltEditActionPerformed(Action.ActionPerformedEvent event) {
-        editorScreens.builder(ordersTable).withScreen(OrderAltEdit.class).build().show();
+        screenBuilders.editor(ordersTable)
+                .withScreen(OrderAltEdit.class)
+                .build()
+                .show();
     }
 }

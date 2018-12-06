@@ -1,6 +1,6 @@
 package com.haulmont.screenapidemos.web.order_alt;
 
-import com.haulmont.cuba.gui.EditorScreens;
+import com.haulmont.cuba.gui.ScreenBuilders;
 import com.haulmont.cuba.gui.components.Action;
 import com.haulmont.cuba.gui.components.Table;
 import com.haulmont.cuba.gui.model.DataContext;
@@ -25,7 +25,7 @@ public class OrderLinesList extends Screen {
     private InstanceContainer<Order> orderCt;
 
     @Inject
-    private EditorScreens editorScreens;
+    private ScreenBuilders screenBuilders;
 
     @Inject
     private Table<OrderLine> orderLinesTable;
@@ -44,12 +44,15 @@ public class OrderLinesList extends Screen {
 
     @Subscribe(id = "orderLinesTable.edit")
     protected void onEditActionPerformed(Action.ActionPerformedEvent event) {
-        editorScreens.builder(orderLinesTable).withParentDataContext(getScreenData().getDataContext()).build().show();
+        screenBuilders.editor(orderLinesTable)
+                .withParentDataContext(getScreenData().getDataContext())
+                .build()
+                .show();
     }
 
     @Subscribe(id = "orderLinesTable.create")
     protected void onCreateActionPerformed(Action.ActionPerformedEvent event) {
-        editorScreens.builder(orderLinesTable)
+        screenBuilders.editor(orderLinesTable)
                 .newEntity()
                 .withParentDataContext(getScreenData().getDataContext())
                 .build()

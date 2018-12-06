@@ -1,6 +1,6 @@
 package com.haulmont.screenapidemos.web.customer;
 
-import com.haulmont.cuba.gui.EditorScreens;
+import com.haulmont.cuba.gui.ScreenBuilders;
 import com.haulmont.cuba.gui.components.Action;
 import com.haulmont.cuba.gui.components.GroupTable;
 import com.haulmont.cuba.gui.screen.*;
@@ -14,14 +14,13 @@ import javax.inject.Inject;
 public class CustomerBrowse extends MasterDetailScreen<Customer> {
 
     @Inject
-    private EditorScreens editorScreens;
-
+    private ScreenBuilders screenBuilders;
     @Inject
     private GroupTable<Customer> table;
 
     @Subscribe("table.editExt")
     protected void onTableEditExtActionPerformed(Action.ActionPerformedEvent event) {
-        editorScreens.builder(table)
+        screenBuilders.editor(table)
                 .withScreen(CustomerEdit.class)
                 .build()
                 .show();
