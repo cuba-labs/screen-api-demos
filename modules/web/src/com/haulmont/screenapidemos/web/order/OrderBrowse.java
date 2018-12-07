@@ -22,7 +22,7 @@ public class OrderBrowse extends StandardLookup<Order> {
     @Subscribe(id = "ordersTable.altEdit")
     protected void onAltEditActionPerformed(Action.ActionPerformedEvent event) {
         screenBuilders.editor(ordersTable)
-                .withScreen(OrderAltEdit.class)
+                .withScreenClass(OrderAltEdit.class)
                 .build()
                 .show();
     }

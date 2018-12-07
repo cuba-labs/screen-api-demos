@@ -21,7 +21,7 @@ public class CustomerBrowse extends MasterDetailScreen<Customer> {
     @Subscribe("table.editExt")
     protected void onTableEditExtActionPerformed(Action.ActionPerformedEvent event) {
         screenBuilders.editor(table)
-                .withScreen(CustomerEdit.class)
+                .withScreenClass(CustomerEdit.class)
                 .build()
                 .show();
     }
